@@ -1,22 +1,47 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const App = () => {
+
+import Register from "./components/Register";
+import Login from "./components/Login";
+import DashboardSection from "./components/Dashboard";
+
+function App() {
   return (
     <Router>
       <Routes>
-        {/* Define a route for the root path */}
-        <Route path="/" element={<Dashboard />} /> {/* Root path should load Dashboard */}
+        <Route
+          path="/"
+          element={
+            <>
+              <NavBar />
+              <HeroSection />
+              <WhyUs />
+              <AboutUs />
+              <ContactUs />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        {/* Add other routes here */}
+
+        <Route path="/dashboard/*" element={<DashboardSection />}>
+          <Route path="user-list" element={<Userlist />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+
+        <Route
+          path="*"
+          element={
+            <div className="text-center mt-20 text-xl text-red-500">
+              404 - Page Not Found
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
