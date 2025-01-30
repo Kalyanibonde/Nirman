@@ -10,6 +10,8 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 import { NavLink, Outlet } from "react-router-dom";
+import HeroSection from "./HeroSection";
+
 
 export default function DashboardSection() {
   const [open, setOpen] = useState(false);
