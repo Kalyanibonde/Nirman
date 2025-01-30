@@ -1,45 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-
-
-import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
-import DashboardSection from "./components/Dashboard";
+import Signup from "./components/Signup";
+import Profile from "./components/Profile";
+import Settings from "./components/Settings";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
     <Router>
+      <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <NavBar />
-              <HeroSection />
-              <WhyUs />
-              <AboutUs />
-              <ContactUs />
-              <Footer />
-            </>
-          }
-        />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-
-        <Route path="/dashboard/*" element={<DashboardSection />}>
-          <Route path="user-list" element={<Userlist />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
-
-        <Route
-          path="*"
-          element={
-            <div className="text-center mt-20 text-xl text-red-500">
-              404 - Page Not Found
-            </div>
-          }
-        />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
