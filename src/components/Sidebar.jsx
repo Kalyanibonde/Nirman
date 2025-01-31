@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"; // Ensure the path is correct
+import "./Sidebar.css"; // Sidebar-specific styles
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 h-screen bg-gray-800 text-white p-4">
-      <h2 className="text-lg font-bold mb-4">Dashboard Menu</h2>
-      <ul>
-        <li className="mb-2"><Link to="/dashboard">🏠 Home</Link></li>
-        <li className="mb-2"><Link to="/profile">👤 Profile</Link></li>
-        <li className="mb-2"><Link to="/settings">⚙️ Settings</Link></li>
-        <li className="mt-4 text-red-400"><Link to="/">🚪 Logout</Link></li>
-      </ul>
+    <aside className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="Logo" className="img-fluid" />
+      </div>
+      <nav className="nav-links">
+        <Link to="/studentportal">📊 Dashboard</Link>
+        <Link to="#">👥 Team Info</Link>
+        <Link to="/clubs">🎯 Clubs</Link>
+        <Link to="/Chatbot">💬 Chatbot</Link>
+        <Link to="#">📝 Request</Link>
+        <Link to="/logout">🚪 Logout</Link>
+      </nav>
     </aside>
   );
 };

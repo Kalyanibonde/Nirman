@@ -1,0 +1,39 @@
+.sidebar {
+    background-color: #003366;
+    color: white;
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+  
